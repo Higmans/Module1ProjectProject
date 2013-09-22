@@ -9,7 +9,6 @@ import android.view.Window;
 import android.widget.*;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Matcher;
