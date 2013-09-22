@@ -84,8 +84,8 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 if (saveData()){
                     hideRegisterForm(true);
-                    Toast.makeText(activity, "Данные сохранены", Toast.LENGTH_SHORT).show();
-                    textViewWelcome.setText("Вы вошли как " +
+                    Toast.makeText(activity, "Р”Р°РЅРЅС‹Рµ СЃРѕС…СЂР°РЅРµРЅС‹", Toast.LENGTH_SHORT).show();
+                    textViewWelcome.setText("Р’С‹ РІРѕС€Р»Рё РєР°Рє " +
                             editTextRegisterName.getText() + " " +
                             editTextRegisterSurname.getText());
                 }
@@ -101,10 +101,10 @@ public class MainActivity extends Activity {
                         fillReadFields();
                     }
                     else
-                        showAlert("Неверная строка JSON!");
+                        showAlert("РќРµРІРµСЂРЅР°СЏ СЃС‚СЂРѕРєР° JSON!");
                 }
                 else
-                    showAlert("Нечего читать! Введите сообщение");
+                    showAlert("РќРµС‡РµРіРѕ С‡РёС‚Р°С‚СЊ! Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ");
             }
         });
 
@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 if (!isUserRegistered()) {
-                    showAlert("Вы не зарегистрированы!");
+                    showAlert("Р’С‹ РЅРµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹!");
                 } else {
                     if (checkSendForm()){
                         try {
@@ -148,10 +148,10 @@ public class MainActivity extends Activity {
             editTextRegisterSurname.setText(surname);
             editTextRegisterEmail.setText(email);
             hideRegisterForm(true);
-            textViewWelcome.setText("Вы вошли как " + name + " " + surname);
+            textViewWelcome.setText("Р’С‹ РІРѕС€Р»Рё РєР°Рє " + name + " " + surname);
         }
         else {
-            textViewWelcome.setText("Вы не зарегистрированы!");
+            textViewWelcome.setText("Р’С‹ РЅРµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹!");
             register.setEnabled(false);
         }
     }
@@ -240,37 +240,37 @@ public class MainActivity extends Activity {
         dialogView.setText(message.toString());
         dialogView.setTextIsSelectable(true);
         AlertDialog.Builder messageDialog = new AlertDialog.Builder(activity);
-        messageDialog.setTitle("Сообщение");
+        messageDialog.setTitle("РЎРѕРѕР±С‰РµРЅРёРµ");
         messageDialog.setView(dialogView);
-        messageDialog.setPositiveButton("Копировать в буфер", new DialogInterface.OnClickListener() {
+        messageDialog.setPositiveButton("РљРѕРїРёСЂРѕРІР°С‚СЊ РІ Р±СѓС„РµСЂ", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("Message", message.toString());
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(activity, "Сообщение скопировано в буфер", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "РЎРѕРѕР±С‰РµРЅРёРµ СЃРєРѕРїРёСЂРѕРІР°РЅРѕ РІ Р±СѓС„РµСЂ", Toast.LENGTH_SHORT).show();
             }
         });
-        messageDialog.setNegativeButton("Закрыть", null);
+        messageDialog.setNegativeButton("Р—Р°РєСЂС‹С‚СЊ", null);
         messageDialog.create().show();
     }
 
     @SuppressWarnings("ConstantConditions")
     private boolean checkSendForm() {
         if (editTextSendMessageName.getText().toString().equals("")){
-            showAlert("Вы не заполнили поле \"Имя\" в форме отправки");
+            showAlert("Р’С‹ РЅРµ Р·Р°РїРѕР»РЅРёР»Рё РїРѕР»Рµ \"РРјСЏ\" РІ С„РѕСЂРјРµ РѕС‚РїСЂР°РІРєРё");
             return false;
         }
         if (editTextSendMessageSurname.getText().toString().equals("")){
-            showAlert("Вы не заполнили поле \"Фамилия\" в форме отправки");
+            showAlert("Р’С‹ РЅРµ Р·Р°РїРѕР»РЅРёР»Рё РїРѕР»Рµ \"Р¤Р°РјРёР»РёСЏ\" РІ С„РѕСЂРјРµ РѕС‚РїСЂР°РІРєРё");
             return false;
         }
         if (editTextSendMessageEmail.getText().toString().equals("")){
-            showAlert("Вы не заполнили поле \"E-mail\" в форме отправки");
+            showAlert("Р’С‹ РЅРµ Р·Р°РїРѕР»РЅРёР»Рё РїРѕР»Рµ \"E-mail\" РІ С„РѕСЂРјРµ РѕС‚РїСЂР°РІРєРё");
             return false;
         }
         if (!checkEmail(editTextSendMessageEmail.getText().toString())){
-            showAlert("Неверно введен E-mail получателя");
+            showAlert("РќРµРІРµСЂРЅРѕ РІРІРµРґРµРЅ E-mail РїРѕР»СѓС‡Р°С‚РµР»СЏ");
             return false;
         }
         return true;
@@ -304,19 +304,19 @@ public class MainActivity extends Activity {
         }
         else{
             if (editTextRegisterName.getText().toString().equals("")){
-                showAlert("Вы не заполнили поле \"Имя\"");
+                showAlert("Р’С‹ РЅРµ Р·Р°РїРѕР»РЅРёР»Рё РїРѕР»Рµ \"РРјСЏ\"");
                 return false;
             }
             if (editTextRegisterSurname.getText().toString().equals("")){
-                showAlert("Вы не заполнили поле \"Фамилия\"");
+                showAlert("Р’С‹ РЅРµ Р·Р°РїРѕР»РЅРёР»Рё РїРѕР»Рµ \"Р¤Р°РјРёР»РёСЏ\"");
                 return false;
             }
             if (editTextRegisterEmail.getText().toString().equals("")){
-                showAlert("Вы не заполнили поле \"E-mail\"");
+                showAlert("Р’С‹ РЅРµ Р·Р°РїРѕР»РЅРёР»Рё РїРѕР»Рµ \"E-mail\"");
                 return false;
             }
             if (!checkEmail(editTextRegisterEmail.getText().toString())){
-                showAlert("Ошибка в поле \"E-mail\"");
+                showAlert("РћС€РёР±РєР° РІ РїРѕР»Рµ \"E-mail\"");
                 return false;
             }
         }
@@ -325,7 +325,7 @@ public class MainActivity extends Activity {
 
     private void showAlert(String alert) {
         AlertDialog.Builder alb = new AlertDialog.Builder(this);
-        alb.setTitle("Ошибка!");
+        alb.setTitle("РћС€РёР±РєР°!");
         alb.setMessage(alert);
         alb.setPositiveButton("OK", null);
         alb.create().show();
